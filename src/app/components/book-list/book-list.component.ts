@@ -17,12 +17,12 @@ export class BookListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   BookData: any = [];
   displayedColumns: any[] = [
-    'key',
+    //'key',
     'book_name',
     // 'author_name', 
     // 'publication_date',
     // 'in_stock',
-    // 'action'
+    'action'
   ];
   noData: boolean = false;
 
@@ -66,7 +66,7 @@ export class BookListComponent implements OnInit {
       const data = this.dataSource.data;
       data.splice((this.paginator.pageIndex * this.paginator.pageSize) + index, 1);
       this.dataSource.data = data;
-      this.bookApi.DeleteBook(e.$key)
+      this.bookApi.DeleteBook(e.key)
     }
   }
 

@@ -7,7 +7,6 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angula
 })
 export class BookService {
   private dbPath = '/Books';
-  // booksRef: AngularFireList<any>;
   booksRef: AngularFireList<any>;
   bookRef: AngularFireObject<any>;
 
@@ -32,7 +31,7 @@ export class BookService {
   // GET BOOK BY ID
   GetBook(id: string) {
     this.bookRef = this.db.object('Books/' + id);
-    return this.booksRef;
+    return this.bookRef;
   }
 
   // GET BOOK LIST
@@ -43,7 +42,7 @@ export class BookService {
   }
 
   // UPDATE A BOOK RECORD
-  UpdateBook(book: Book) {
+  UpdateBook(id, book: Book) {
     this.bookRef.update({
       book_name: book.book_name,
       // isbn_10: book.isbn_10,
@@ -60,7 +59,7 @@ export class BookService {
 
   // DELETE A BOOK RECORD
   DeleteBook(id: string) {
-    this.bookRef = this.db.object('books-list/' + id);
+    this.bookRef = this.db.object('Books/' + id);
     this.bookRef.remove();
     // .catch(error => {
     //   this.errorMgmt(error);
