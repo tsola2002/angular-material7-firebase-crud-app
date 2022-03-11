@@ -4,21 +4,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatIconModule } from '@angular/material/icon';
-
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatBadgeModule } from "@angular/material/badge";
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -29,40 +27,40 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         MatToolbarModule,
         MatIconModule,
         MatSidenavModule,
-        // MatBadgeModule,
-        // MatListModule,
-        // MatGridListModule,
-        // MatFormFieldModule,
-        // MatInputModule,
-        // MatSelectModule,
-        // MatRadioModule,
-        // MatDatepickerModule,
-        // MatNativeDateModule,
-        // MatChipsModule,
-        // MatTooltipModule,
-        // MatTableModule,
-        // MatPaginatorModule
+        MatBadgeModule,
+        MatListModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatChipsModule,
+        MatTooltipModule,
+        MatTableModule,
+        MatPaginatorModule
    ],
     exports: [
         MatButtonModule,
         MatToolbarModule,
         MatIconModule,
         MatSidenavModule,
-        // MatBadgeModule,
-        // MatListModule,
-        // MatGridListModule,
-        // MatInputModule,
-        // MatFormFieldModule,
-        // MatSelectModule,
-        // MatRadioModule,
-        // MatDatepickerModule,
-        // MatChipsModule,
-        // MatTooltipModule,
-        // MatTableModule,
-        // MatPaginatorModule
+        MatBadgeModule,
+        MatListModule,
+        MatGridListModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatDatepickerModule,
+        MatChipsModule,
+        MatTooltipModule,
+        MatTableModule,
+        MatPaginatorModule
    ],
     providers: [
-       //MatDatepickerModule,
+       MatDatepickerModule,
    ]
 })
 export class AngularMaterialModule { }

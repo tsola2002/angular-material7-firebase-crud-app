@@ -6,8 +6,10 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angula
   providedIn: 'root'
 })
 export class BookService {
-  booksRef!: AngularFireList<any>;
-  bookRef!: AngularFireObject<any>;
+  private dbPath = '/Books';
+  // booksRef: AngularFireList<any>;
+  booksRef: AngularFireList<any>;
+  bookRef: AngularFireObject<any>;
 
   constructor(private db: AngularFireDatabase) { }
   
@@ -15,12 +17,12 @@ export class BookService {
   AddBook(book: Book) {
     this.booksRef.push({
       book_name: book.book_name,
-      isbn_10: book.isbn_10,
-      author_name: book.author_name,
-      publication_date: book.publication_date,
-      binding_type: book.binding_type,
-      in_stock: book.in_stock,
-      languages: book.languages
+      // isbn_10: book.isbn_10,
+      // author_name: book.author_name,
+      // publication_date: book.publication_date,
+      // binding_type: book.binding_type,
+      // in_stock: book.in_stock,
+      // languages: book.languages
     });
     // .catch(error => {
     //   this.errorMgmt(error);
@@ -29,13 +31,14 @@ export class BookService {
 
   // GET BOOK BY ID
   GetBook(id: string) {
-    this.bookRef = this.db.object('books-list/' + id);
+    this.bookRef = this.db.object('Books/' + id);
     return this.booksRef;
   }
 
   // GET BOOK LIST
   GetBookList() {
-    this.booksRef = this.db.list('books-list');
+    // this uses list method in the firelist library
+    this.booksRef = this.db.list('Books');
     return this.booksRef;
   }
 
@@ -43,12 +46,12 @@ export class BookService {
   UpdateBook(book: Book) {
     this.bookRef.update({
       book_name: book.book_name,
-      isbn_10: book.isbn_10,
-      author_name: book.author_name,
-      publication_date: book.publication_date,
-      binding_type: book.binding_type,
-      in_stock: book.in_stock,
-      languages: book.languages
+      // isbn_10: book.isbn_10,
+      // author_name: book.author_name,
+      // publication_date: book.publication_date,
+      // binding_type: book.binding_type,
+      // in_stock: book.in_stock,
+      // languages: book.languages
     });
     // .catch(error => {
     //   this.errorMgmt(error);

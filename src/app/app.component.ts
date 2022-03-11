@@ -6,30 +6,36 @@ import { MatSidenav } from '@angular/material/sidenav';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+  
+  
 export class AppComponent {
   opened = true;
   @ViewChild('sidenav')
   sidenav!: MatSidenav;
+
+  constructor() { 
+   // Initialization inside the constructor 
+  }
   ngOnInit() {
-    if (window.innerWidth < 768) {
+    // if (window.innerWidth < 768) {
+    //   this.sidenav.fixedTopGap = 55;
+    //   this.opened = false;
+    // } else {
+    //   this.sidenav.fixedTopGap = 55;
+    //   this.opened = true;
+    // }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if (event.target.innerWidth < 768) {
       this.sidenav.fixedTopGap = 55;
       this.opened = false;
     } else {
-      this.sidenav.fixedTopGap = 55;
+      this.sidenav.fixedTopGap = 55
       this.opened = true;
     }
   }
-
-  // @HostListener('window:resize', ['$event'])
-  // onResize(event) {
-  //   if (event.target.innerWidth < 768) {
-  //     this.sidenav.fixedTopGap = 55;
-  //     this.opened = false;
-  //   } else {
-  //     this.sidenav.fixedTopGap = 55
-  //     this.opened = true;
-  //   }
-  // }
 
    isBiggerScreen() {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
